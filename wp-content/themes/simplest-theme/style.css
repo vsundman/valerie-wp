@@ -1,0 +1,19 @@
+/*	
+Theme Name: Simplest Theme Ever
+Author: Valerie Sundman
+Version: 0.1
+License: GPLv3
+*/
+
+body{
+	background-color: #E8E1F4;
+}
+article{
+	padding-top: 25px;
+}
+ul li{
+	list-style-type: none;
+}
+.menu li{
+	background-color: #B0B0FF;
+}
