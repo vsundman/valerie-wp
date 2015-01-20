@@ -34,14 +34,12 @@
 
 		<div class="pagination">
 			<?php 
-			//run pagenavi if the plugin exists, otherwise do the default prev/next buttons
-			if( function_exists('wp_pagenavi') && !wp_is_mobile() ): wp_pagenavi();
-			else: previous_posts_link('&larr; Newer Posts '); 
- 			next_posts_link(' Older Posts &rarr;');
- 			endif;
-			?>
+			next_post_link( '%link', '&larr; Newer Post: %title' );
+			previous_post_link( '%link', 'Older Post: %title &rarr;') ; 
+ 			?>
 
 		</div>
+		<?php comments_template(); //comment list and form ?>
 
 	<?php else: ?>
 
