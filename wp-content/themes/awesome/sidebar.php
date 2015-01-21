@@ -1,4 +1,10 @@
 <aside id="sidebar"> 
+<?php //if the blog sidebar widget area has widgets, show it. 
+	//otherwise, do fallback stuff.
+	if( !dynamic_sidebar('Blog Sidebar') ):
+
+ ?>
+
 		<section id="categories" class="widget">
 			<h3 class="widget-title">Popular Categories </h3>
 			<ul>
@@ -42,4 +48,5 @@
 			<?php endif; ?>
 			</ul>
 		</section>
+	<?php 	endif; //end of widget area fallback ?>
 	</aside><!-- end #sidebar -->
