@@ -1,0 +1,14 @@
+#rad-ribbon{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.admin-bar #rad-ribbon{
+	top: 30px;
+}
+/*hide on small screens*/
+@media screen and (max-width: 600px){
+	#rad-ribbon{
+		display: none;
+	}
+}
