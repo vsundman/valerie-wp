@@ -16,6 +16,14 @@
 
 			<div class="entry-content">
 			<?php the_meta(); //will output a loop of ALL the custom fields in that post ?>
+
+
+
+			<?php the_terms( $post->ID, 'brand', 'Brand: '); //shows the terms for the taxonomy(brands) you need to tell it which post and which term, and the third one is if you want it to say brand or whatever before the term ?>
+
+			
+
+
 			<?php the_content(); ?>
 			</div>
 
