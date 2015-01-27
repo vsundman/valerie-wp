@@ -1,0 +1,13 @@
+body{
+	background-color: #A5C0E2;
+}
+.wp-core-ui .button-primary{
+	background: #BAA0E9;
+	border-color: #71408A;
+	box-shadow: inset 0 1px 0 rgba(79,23,153, 0.15),0 1px 0 rgba(210,155,210,0.15) ;
+}
+.login h1 a {
+	background-image: url('../images/logo.png');
+	background-size: auto;
+	width: auto;
+}

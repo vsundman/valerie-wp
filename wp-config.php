@@ -14,6 +14,8 @@
  * @package WordPress
  */
 
+if( $_SERVER['HTTP_HOST'] == 'localhost' ):
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'valerie_wp');
@@ -24,8 +26,14 @@ define('DB_USER', 'vsundmanwp');
 /** MySQL database password */
 define('DB_PASSWORD', 'CjrBGKy72RprjuDe');
 
+else:
+define('DB_NAME', 'vsundman_awesome');
+define('DB_USER', 'vsundman_vs');
+define('DB_PASSWORD', 'b=[gAz~=HS%C');
+endif;
+
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'localhost'); //host gator specific, DO NOT CHANGE
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
