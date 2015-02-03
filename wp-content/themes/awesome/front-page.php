@@ -7,7 +7,13 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class();//this adds extra classes to the post ?>>
 
-			<?php the_post_thumbnail('big-banner'); ?>
+			<?php 
+			if( function_exists('rad_slider') ):
+				rad_slider();
+			else:
+			the_post_thumbnail('big-banner'); 	
+			endif;
+			?>
 
 			<h2 class="entry-title"> 
 				<a href="<?php the_permalink(); ?>"> 
@@ -36,6 +42,13 @@
 	<p>Try using the search bar instead</p>
 
 	<?php endif;  //end THE LOOP ?>
+
+	<?php awesome_recent_products(); ?>
+
+
+
+
+
 
 </main><!-- end #content -->
 

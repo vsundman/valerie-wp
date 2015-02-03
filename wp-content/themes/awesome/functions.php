@@ -97,9 +97,40 @@ register_sidebar ( array(
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>'
 		) );
+	
 
+function awesome_recent_products( $number = 6 ){
 
+	//custom query to get most recent products
+	$products_query = new WP_Query( array(
+					  'post_type' 	   => 'product',
+					  'posts_per_page' => $number,
+	) );
+	//custom loop
+	if ($products_query->have_posts()):
 
+	 ?>
+	<section class="latest-products">
+		<h2>Newest Products in the shop:</h2>
+		<ul>
+		<?php while ($products_query->have_posts()):
+			$products_query->the_post(); ?>
+			<li>
+				<a href="LINK">
+					<?php the_post_thumbnail('thumbnail' ); ?>
+					<div class="product-info">
+						<h3><?php the_title(); ?></h3>
+						<p><?php the_excerpt(); ?></p>
+					</div>
+				</a>
+			</li>
+		<?php endwhile; ?>
+		</ul>
+	</section>
+	<?php endif; 
+	wp_reset_postdata(); //this prevents clashing with other loops 
+
+}//end function of awesome recent products
 
 
 
