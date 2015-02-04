@@ -71,6 +71,17 @@ function rad_shortcode_phone(){
 	return $values['phone'];
 }
 
+//add [contact] shortcode
+add_shortcode('contact','rad_shortcode_contact' );
+function rad_shortcode_contact(){
+ $values = get_option('rad_options' ); ?>
+	<div class="contact-box">
+		<a href="tel:<?php echo $values['phone'] ?>"><?php echo $values['phone'] ?></a>
+		<address><?php echo $values['address'] ?></address>
+	</div>
+<?php 
+}
+
 //shortcode for [email]
 add_shortcode( 'email', 'rad_shortcode_email' );
 function rad_shortcode_email(){
