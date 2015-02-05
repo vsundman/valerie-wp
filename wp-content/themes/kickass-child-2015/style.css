@@ -1,0 +1,49 @@
+/*
+Theme Name: Kickass Child for 2015
+Theme URI: http://example.com/
+Description: Demonstration how to child theme
+Version: 1.0
+Author: Valerie Sundman
+Author URI: http://valeriesundman.com
+Tags: one, two
+Template: twentyfifteen
+ */
+
+/*this is a child theme of 2015*/
+
+
+/*THIS FILE WILL LOAD INSTEAD OF TWENTYFIFTEEN'S STYLE.CSS*/
+
+@import url("../twentyfifteen/style.css");
+
+
+body{
+	background-color: #008080;
+}
+.comments-area{
+	background-color: #EAE4A8;
+}
+footer.site-footer .widget{
+	background-color: #D2C2EF;
+	border-bottom: 1px solid #BB77FF;
+	padding: 1em;
+	width: 50%;
+	float: left;
+	margin: 0;
+	text-align: center;
+}
+.site-footer .widget h2{
+	font-size: 24px;
+	padding-bottom: 10px;
+
+}
+.site-footer .widget li{
+	list-style-type: none;
+	line-height: 35px;
+}
+.site-info{
+	clear: both;
+	text-align: center;
+}
+
+
