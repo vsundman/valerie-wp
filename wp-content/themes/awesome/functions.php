@@ -133,6 +133,68 @@ function awesome_recent_products( $number = 6 ){
 }//end function of awesome recent products
 
 
+/**
+ * Customization API
+ */
+add_action( 'customize_register', 'awesome_theme_customizer' );
+//
+function awesome_theme_customizer( $wp_customize ) {
+//Link color
+	//create the setting and its defaults
+	$wp_customize->add_setting(	'awesome_link_color', array( 'default'    => '#6bcbca'	));
+	//add the UI control. this is a color picker control. Attach it to the setting. 
+	$wp_customize->add_control(	new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+		'label'      => 'Link Color',
+		'section'    => 'colors', //this is one of the panels that is given to you. you can make your own, too. 
+		'settings'   => 'awesome_link_color', //the setting from above that this control controls!
+		)
+	));
+//Text Color
+	$wp_customize->add_setting(	'awesome_text_color', array(
+		'default'     => '#ffffff',
+	));
+	//add the UI control. this is a color picker control. Attach it to the setting. 
+	$wp_customize->add_control(	
+		new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
+		'label'      => 'Body Text Color',
+		'section'    => 'colors', //this is one of the panels that is given to you. you can make your own, too. 
+		'settings'   => 'awesome_text_color', //the setting from above that this control controls!
+		)
+	));
+//Radio Option - Right or left hand sidebar?
+	$wp_customize->add_section( 'awesome_layout_section' , array(
+    'title'      => 'Layout',
+    'priority'   => 30,) );
+	$wp_customize->add_setting( 'awesome_layout', array( 'default' => 'right' ) );
+	$wp_customize->add_control(
+    	new WP_Customize_Control( $wp_customize, 'sidebar_layout', array(
+            'label'          => 'Sidebar Position',
+            'section'        => 'awesome_layout_section',
+            'settings'       => 'awesome_layout',
+            'type'           => 'radio',
+            'choices'        => array(
+                'left'   => 'Left',
+                'right'  => 'Right',
+            )
+        )
+    ));
+}	
+function awesome_customizer_css() {
+	?>
+	<style type="text/css">
+	a { color: <?php echo get_theme_mod( 'awesome_link_color' ); ?>;  }
+	body{color: <?php echo get_theme_mod( 'awesome_text_color' ); ?>; }
+	<?php if(get_theme_mod('awesome_layout') == 'right'): ?>
+		#sidebar{float:right;}
+		#content{float:left;}
+	<?php else: ?>
+		#sidebar{float:left;}
+		#content{float:right;}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'awesome_customizer_css' );
 
 
 //no close PHP
