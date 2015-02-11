@@ -21,6 +21,9 @@ License: GPLv3
 == FOOTER
 == SLIDER(front-page)
 == LATEST WORK(front-page)
+== SINGLE PAGES
+== 404 page
+
 
 == MEDIA QUERIES ==
 
@@ -627,9 +630,6 @@ section p{
 }
 
 
-
-
-
 /*clearfix!*/
 .clearfix {
   overflow: auto;
@@ -691,6 +691,7 @@ section p{
 .customize-control-alphacolor .wp-picker-container .iris-picker {
     border-bottom:none;
 }
+/*404 page*/
 main.error{
 	text-align: center;
 }
@@ -709,6 +710,14 @@ main.error h2.sorry{
 .error .latest-work h2.title{
 	display: none;
 }
+
+/*SINGLE PAGES*/
+
+
+
+
+
+
 
 
 
@@ -1215,6 +1224,10 @@ nav ul.nav li a{
 	text-align: center;
 	float: left;
 	margin-left: 12px;
+}
+/*SINGLE PAGE*/
+.single aside#sidebar{
+	margin-top: 20px;
 }
 
 
